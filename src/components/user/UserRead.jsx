@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const UserRead = () => {
+    const [userid, setUserid] = useState()
+    const [userpwd, setUserPwd] = useState()
 
-    const login = () => {
-        alert('login button click')
+    const login = e => {
+        e.preventDefault()
+        // alert(`로그인 버튼 클릭 ${document.getElementById('id').value}`)
+        alert(`로그인 아이디: ${userid}, 비밀번호: ${userpwd}`)
     }
 
     const cancel = () => {
@@ -15,11 +19,11 @@ const UserRead = () => {
     <table>
         <tr>
             <td>ID</td>
-            <td><input type='text'/></td>
+            <td><input type='text' id='id' onChange={e => {setUserid(`${e.target.value}`)}}/></td>
         </tr>
         <tr>
             <td>Password</td>
-            <td><input type='text'/></td>
+            <td><input type='text' id='pwd' name='pwd' onChange={e => {setUserPwd(`${e.target.value}`)}}/></td>
         </tr>
         <tr>
             <td colSpan='2'>
