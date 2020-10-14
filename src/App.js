@@ -19,6 +19,10 @@ const App = () => (<>
       <Route path='/user/remove' component={UserRemove}></Route>
 
       <Route exact path='/item' component={Item}></Route>
+      <Route path='/item/register' component={ItemRegister}></Route>
+      <Route path='/item/read' component={ItemRead}></Route>
+      <Route path='/item/update' component={ItemUpdate}></Route>
+      <Route path='/item/remove' component={ItemRemove}></Route>
 
       <Route exact path='/board' component={Board}></Route>
       <Route path='/board/register' component={BoardRegister}></Route>

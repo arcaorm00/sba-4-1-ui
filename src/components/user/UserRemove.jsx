@@ -1,5 +1,6 @@
 import React from 'react'
+import { UserNav } from './menu'
 
-const UserRemove = () => <>UserRemove</>
+const UserRemove = () => <><UserNav/>UserRemove</>
 
 export default UserRemove
