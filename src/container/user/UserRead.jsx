@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import { UserNav } from './menu'
+import { User } from '../../templates'
 
 const UserRead = () => {
     const [userid, setUserid] = useState()
@@ -26,7 +26,7 @@ const UserRead = () => {
     }
 
     return (<>
-    <UserNav/>
+    <User>
     Login
     <table>
         <tr>
@@ -44,6 +44,7 @@ const UserRead = () => {
             </td>
         </tr>
     </table>
+    </User>
     </>)
 }
 
