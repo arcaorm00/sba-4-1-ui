@@ -1,6 +1,5 @@
 import React from 'react'
-import {BoardNav} from './menu'
 
-const BoardRead = () => <><BoardNav/>BoardRead</>
+const BoardRead = () => <>BoardRead</>
 
 export default BoardRead
