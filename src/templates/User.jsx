@@ -1,4 +1,5 @@
 import React from 'react'
+import './table.style.css'
 import { UserMenu as Menu } from '../components'
 
 const User = ({children}) => (<>

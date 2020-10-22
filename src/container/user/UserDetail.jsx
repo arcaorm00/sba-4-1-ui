@@ -1,12 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
-import { User } from '../../templates'
+import {User} from '../../templates'
 
-const UserUpdate = () => {
-return (
-    <User>
-        <h1>UserUpdate</h1>
-        <table className="tab_layer">
+const UserDetail = () => {
+    return (<User>
+        <h1>UserDetail</h1>
+        <table>
             <tr>
                 <td></td>
                 <td></td>
@@ -44,8 +43,8 @@ return (
                 <td></td>
             </tr>
         </table>
-    </User>
-)
-}
 
-export default UserUpdate
+    </User>
+        
+    )
+}

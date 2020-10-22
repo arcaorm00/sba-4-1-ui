@@ -1,4 +1,5 @@
 import React from 'react'
+import './table.style.css'
 import { Link } from 'react-router-dom'
 
 const Item = () => <>

@@ -28,7 +28,7 @@ const UserRead = () => {
     return (<>
     <User>
     Login
-    <table>
+    <table className="tab_layer">
         <tr>
             <td>ID</td>
             <td><input type='text' id='id' onChange={e => {setUserid(`${e.target.value}`)}}/></td>
@@ -43,6 +43,7 @@ const UserRead = () => {
                 <input type='button' value='CANCEL' onClick={cancel}/>
             </td>
         </tr>
+        
     </table>
     </User>
     </>)
