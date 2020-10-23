@@ -1,23 +1,31 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { User } from '../../templates'
+import { Link, useHistory } from 'react-router-dom'
 
 const UserRead = () => {
-    const [userid, setUserid] = useState()
-    const [userpwd, setUserPwd] = useState()
+    const [userid, setUserid] = useState('')
+    const [password, setPassword] = useState('')
+
+    const history = useHistory()
 
     const login = e => {
         e.preventDefault()
-        // alert(`로그인 버튼 클릭 ${document.getElementById('id').value}`)
-        alert(`로그인 아이디: ${userid}, 비밀번호: ${userpwd}`)
-        axios.post('', {userid, userpwd})
+        alert(`로그인 아이디: ${userid}, 비밀번호: ${password}`)
+        axios.post('http://localhost:8080/api/access', {userid, password})
         .then(res => {
-            alert('Success')
+            alert(`Welcome! ${res.data["name"]}. ${res.data["userid"]}'s connection is successful !`)
+
+            sessionStorage.setItem("sessionUser", res.data['userid'])
+            window.location.reload()
+            history.push("/home")
         })
         .catch(error => {
-            alert('Fail')
+            alert(error)
+            alert('Please check your ID or password!')
+            window.location.reload()
         })
-        //post(보냈더니).then(성공한 경우).catch(실패한 경우)
+        //post(보낸 후).then(성공한 경우).catch(실패한 경우)
     }
 
     const cancel = e => {
@@ -35,7 +43,7 @@ const UserRead = () => {
         </tr>
         <tr>
             <td>Password</td>
-            <td><input type='text' id='pwd' onChange={e => {setUserPwd(`${e.target.value}`)}}/></td>
+            <td><input type='text' id='pwd' onChange={e => {setPassword(`${e.target.value}`)}}/></td>
         </tr>
         <tr>
             <td colSpan='2'>

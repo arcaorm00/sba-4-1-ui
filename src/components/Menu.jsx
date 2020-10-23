@@ -8,6 +8,7 @@ export const UserMenu = () => (
             <li><Link to='/signin-form'>Signin Form</Link></li>
             <li><Link to='/mypage'>Mypage</Link></li>
             <li><Link to='/modifying-user-info'>Modifying User Info</Link></li>
+            <li><Link to='/userlist'>UserList</Link></li>
         </ol>
     </nav>
 )
